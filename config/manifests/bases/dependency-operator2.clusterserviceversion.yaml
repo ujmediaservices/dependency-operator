@@ -1,0 +1,53 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: dependency-operator2.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Dependency is the Schema for the dependencies API
+      displayName: Dependency
+      kind: Dependency
+      name: dependencies.dep.example.com
+      specDescriptors:
+      - description: Foo is an example field of Dependency. Edit dependency_types.go
+          to remove/update
+        displayName: Name
+        path: name
+      - displayName: Type
+        path: type
+      - displayName: Url
+        path: url
+      version: v1alpha1
+  description: my operator
+  displayName: dependency-operator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - dependency
+  links:
+  - name: Dependency Operator2
+    url: https://dependency-operator2.domain
+  maturity: alpha
+  provider:
+    name: Jay
+  version: 0.0.0
